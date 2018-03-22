@@ -36,7 +36,9 @@ def read_template(template_file):
     return Template(template_file_content)
 
 @click.command()
-#def send_email():
+def send_email():
+    get_sender_info()
+    print(f'{MY_ADDRESS}: {NAME}, {EMAIL}')
     #names, emails = get_contacts('mycontacts.txt') # read contacts
     #message_template = read_template('message.txt')
 #
@@ -71,4 +73,4 @@ def read_template(template_file):
     #s.quit()
 
 if __name__ == '__main__':
-    sender_email()
+    send_email()
