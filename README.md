@@ -5,8 +5,9 @@ The script will run continuously, and when a temperature threshold is reached, w
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-<++>
+A Rpi set up, with a DS18B20 connected to the GPIO:
+![Image from Adafruit](https://cdn-learn.adafruit.com/assets/assets/000/003/782/medium800/learn_raspberry_pi_breadboard-probe.png?1396801706)
+
 
 ### Prerequisites
 
