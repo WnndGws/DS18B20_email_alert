@@ -23,13 +23,11 @@ All code is run on the following system:
 sudo raspi-config
 reboot
 ```
-
 1. Update the Rpi
 ```bash
 sudo rpi-update
 reboot
 ```
-
 1. Update Raspbian
 ```bash
 sudo apt update
