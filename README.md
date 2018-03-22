@@ -6,7 +6,7 @@ The script will run continuously, and when a temperature threshold is reached, w
 ## Getting Started
 
 A Rpi set up, with a DS18B20 connected to the GPIO:
-![Image from Adafruit](https://cdn-learn.adafruit.com/assets/assets/000/003/782/medium800/learn_raspberry_pi_breadboard-probe.png?1396801706)
+![Image from Adafruit](https://cdn-learn.adafruit.com/assets/assets/000/003/782/medium800/learn_raspberry_pi_breadboard-probe.png?1396801706 =250x)
 
 
 ### Prerequisites
