@@ -19,8 +19,11 @@ def read_temp_raw():
 
 def read_temp():
     '''
-    Successful response: '...YES t=31.25'?
-    Failed response: '...NO...'?
+    Successful response: 
+      4b 01 4b 46 7f ff 05 10 e1 : crc=e1 YES
+      4b 01 4b 46 7f ff 05 10 e1 t=31225
+    Failed response: 
+      ...NO...  ???
     '''
     lines = read_temp_raw()
     while lines[0].strip()[-3:] != 'YES':
