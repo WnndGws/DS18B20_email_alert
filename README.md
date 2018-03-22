@@ -70,6 +70,9 @@ Please read [CONTRIBUTING.md](https://github.com/WnndGws/DS18B20_email_alert/blo
 
 ## Contributors
 
+* [AmmGws](https://github.com/ammgws)
+    - Most docstrings in read_temperature.py
+    - Spelling and formatting of other code
 
 ## License
 
