@@ -5,7 +5,7 @@ The script will run continuously, and when a temperature threshold is reached, w
 
 ## Getting Started
 
-A Rpi set up, with a DS18B20 connected to the GPIO (see (References)[##References])
+A Rpi set up, with a DS18B20 connected to the GPIO (see [References](#references))
 
 ### Prerequisites
 
