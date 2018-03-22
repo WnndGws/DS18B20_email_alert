@@ -16,13 +16,9 @@ def send_email(sender_email, password, receiver_name, receiver_email, template_f
     """Takes click options, and sends an email
     """
 
-    print(f'{sender_email}: {receiver_name}, {receiver_email}')
-    #with open(template_file, 'r', encoding='UTF-8') as tf:
-        #template_file_content = tf.read()
-    #return Template(template_file_content)
+    with open(template_file, 'r', encoding='UTF-8') as tf:
+        template_file_content = tf.read() #Reads file, and uses that as template
 
-    #names, emails = get_contacts('mycontacts.txt') # read contacts
-    #message_template = read_template('message.txt')
 #
     ## set up the SMTP server
     #s = smtplib.SMTP(host='your_host_address_here', port=your_port_here)
