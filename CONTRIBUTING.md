@@ -11,8 +11,9 @@ I want to make contributing as easy and transparent as possible, whether it's:
 I use github to host code, to track issues and feature requests, as well as accept pull requests.
 
 ## I Use [Github Flow](https://guides.github.com/introduction/flow/index.html)
-So All Code Changes Happen Through Pull Requests
-Pull requests are the best way to propose changes to the codebase (I use [Github Flow](https://guides.github.com/introduction/flow/index.html)). I actively welcome your pull requests:
+So All Code Changes Happen Through Pull Requests.
+
+Pull requests are the best way to propose changes to the codebase.
 
 To see an example of a "fork-PR" process, see [here](https://gist.github.com/WnndGws/3beade5a786da8f30be7eb9dcd2c37b9)
 
