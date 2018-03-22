@@ -11,34 +11,16 @@ from string import Template
 @click.option('--password', prompt=True, hide_input=True, confirmation_prompt=True, help="Password to log into email server")
 @click.option('--receiver-name', prompt="Name of receiver", type=str, help="Name of the email recipient")
 @click.option('--receiver-email', prompt="Email address to send email to", type=str, help="Email address of the recipient")
-def get_sender_info(sender_email, password, receiver_name, receiver_email):
-    """
-    Takes command line inputs to set variables
-    """
-
-    MY_ADDRESS = sender-email
-    PASSWORD = password
-    NAME = receiver-name
-    EMAIL = receiver-email
-
-    return MY_ADDRESS, PASSWORD, NAME, EMAIL
-
-@click.command()
-@click.option('--template-file', type=click.Path(), default="./email-template.txt", help="The file the email template should be read from. DEFAULT=./email-template.txt")
-def read_template(template_file):
-    """
-    Returns a Template object comprising the contents of the
-    file specified by filename.
+@click.option('--template-file', type=click.Path(), default="./email-template.txt.example", help="The file the email template should be read from. DEFAULT=./email-template.txt")
+def send_email(sender_email, password, receiver_name, receiver_email, template_file):
+    """Takes click options, and sends an email
     """
 
-    with open(template_file, 'r', encoding='UTF-8') as tf:
-        template_file_content = tf.read()
-    return Template(template_file_content)
+    print(f'{sender_email}: {receiver_name}, {receiver_email}')
+    #with open(template_file, 'r', encoding='UTF-8') as tf:
+        #template_file_content = tf.read()
+    #return Template(template_file_content)
 
-@click.command()
-def send_email():
-    get_sender_info()
-    print(f'{MY_ADDRESS}: {NAME}, {EMAIL}')
     #names, emails = get_contacts('mycontacts.txt') # read contacts
     #message_template = read_template('message.txt')
 #
