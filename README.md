@@ -5,7 +5,10 @@ The script will run continuously, and when a temperature threshold is reached, w
 
 ## Getting Started
 
-A Rpi set up, with a DS18B20 connected to the GPIO (see [References](#references))
+* A Rpi set up, with a DS18B20 connected to the GPIO (see [References](#references))
+* An email account to send emails from (A free gmail account will suffice)
+* An account with [Twilio](https://www.twilio.com/sms/pricing/)(OPTIONAL)
+    - Only if you would like to send an SMS when an alert is triggered
 
 ### Prerequisites
 
@@ -89,4 +92,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Inspiration for project from [Adafruit](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-11-ds18b20-temperature-sensing/overview)
 
 ## References
-![Image from Adafruit](https://cdn-learn.adafruit.com/assets/assets/000/003/782/medium800/learn_raspberry_pi_breadboard-probe.png?1396801706)
+* This project uses [Twilio](https://www.twilio.com/sms/pricing/) to send it's SMS messages
+
+* ![Image from Adafruit](https://cdn-learn.adafruit.com/assets/assets/000/003/782/medium800/learn_raspberry_pi_breadboard-probe.png?1396801706)
