@@ -19,6 +19,9 @@ def read_temp_raw():
 
 def read_temp():
     '''
+    The response will either have YES or NO at the end of the first line. 
+    If it is yes, then the temperature will be at the end of the second line, in degC*1000.
+    
     Successful response: 
       4b 01 4b 46 7f ff 05 10 e1 : crc=e1 YES
       4b 01 4b 46 7f ff 05 10 e1 t=31225
