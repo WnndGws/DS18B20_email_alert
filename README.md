@@ -80,8 +80,11 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Original code forked from Pimylifeup
+* Original temperature code forked from Pimylifeup
 [Pimylifeup](https://github.com/pimylifeup/temperature_sensor)
+
+* Original email code forked from arjunkrishnababu96
+[arjunkrishnababu96](https://gist.github.com/arjunkrishnababu96/5c96ef3306b92120696a44b92db8947f)
 
 * Inspiration for project from [Adafruit](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-11-ds18b20-temperature-sensing/overview)
 
