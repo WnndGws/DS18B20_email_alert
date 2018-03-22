@@ -11,9 +11,9 @@ A Rpi set up, with a DS18B20 connected to the GPIO (see [References](#references
 
 All code is run on the following system:
 * A Raspberry Pi Zero W
-    - Any Rpi should be able to work, as long as it can handle Rasbian and Python 3, but I am using a Pi Zero W
+    - Any Rpi should be able to work, as long as it can handle Rasbian and Python 3
 * Rasbian Stretch Lite
-    - Again, any distrothat runs on the Rpi should work, this is just what I am using
+    - Again, any distro that runs on the Rpi should work, this is just what I am using
 * Python 3
 
 ### Installing
@@ -62,7 +62,7 @@ Give an example
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/WnndGws/DS18B20_email_alert/blob/master/CONTRIBUTING.md) for details on contributing.
 
 ## Authors
 
