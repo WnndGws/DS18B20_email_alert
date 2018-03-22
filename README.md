@@ -18,7 +18,7 @@ All code is run on the following system:
 
 ### Installing
 
-0. Run raspi-config
+1. Run raspi-config
 ```bash
 sudo raspi-config
 reboot
