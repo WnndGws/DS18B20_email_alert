@@ -15,33 +15,21 @@ All code is run on the following system:
 * Rasbian Stretch Lite
 * Python 3
 
-```
-Give examples
-```
-
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
-<++>
-
-Say what the step will be
-<++>
-
-```
-Give the example
-<++>
+0. Run raspi-config
+```bash
+sudo raspi-config
+reboot
 ```
 
-And repeat
-<++>
-
+1. Update the Rpi
+```bash
+sudo rpi-update
+sudo apt update
+sudo apt upgrade
+reboot
 ```
-until finished
-<++>
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-<++>
 
 ## Running the tests
 
