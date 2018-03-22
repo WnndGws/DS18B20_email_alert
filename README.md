@@ -1,6 +1,6 @@
 # DS18B20 Email Alert
 
-This is a python script that can be run on a Rasberry Pi connected to a DS18B20 temperature sensor.
+This is a python script that can be run on a Raspberry Pi connected to a DS18B20 temperature sensor.
 The script will run continuously, and when a temperature threshold is reached, will email a user.
 
 ## Getting Started
@@ -12,7 +12,7 @@ A Rpi set up, with a DS18B20 connected to the GPIO:
 ### Prerequisites
 
 All code is run on the following system:
-* A Rasberry Pi Zero W
+* A Raspberry Pi Zero W
 * Rasbian Stretch Lite
 * Python 3
 
@@ -28,7 +28,7 @@ All code is run on the following system:
     sudo rpi-update
     reboot
     ```
-2. Update Raspbian
+2. Update Rasbian
     ```bash
     sudo apt update
     sudo apt upgrade
@@ -72,9 +72,6 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 ## Authors
 
 * WnndGws
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-<++>
 
 ## License
 
