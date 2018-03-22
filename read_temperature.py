@@ -8,6 +8,7 @@ os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
 
 base_dir = '/sys/bus/w1/devices/'
+xxxx_magic_number_xxxx = '28'
 device_folder = glob.glob(base_dir + '28*')[0]
 device_file = device_folder + '/w1_slave'
 
@@ -17,9 +18,13 @@ def read_temp_raw():
     return lines
 
 def read_temp():
+    '''
+    Successful response: '...YES t=31.25'?
+    Failed response: '...NO...'?
+    '''
     lines = read_temp_raw()
     while lines[0].strip()[-3:] != 'YES':
-        time.sleep(0.2)
+        time.sleep(0.2)  # need to wait for DS18B20 to finish ADC conversion
         lines = read_temp_raw()
     equals_pos = lines[1].find('t=')
     if equals_pos != -1:
