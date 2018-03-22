@@ -19,21 +19,21 @@ All code is run on the following system:
 ### Installing
 
 0. Run raspi-config
-```bash
-sudo raspi-config
-reboot
-```
+    ```bash
+    sudo raspi-config
+    reboot
+    ```
 1. Update the Rpi
-```bash
-sudo rpi-update
-reboot
-```
+    ```bash
+    sudo rpi-update
+    reboot
+    ```
 2. Update Raspbian
-```bash
-sudo apt update
-sudo apt upgrade
-reboot
-```
+    ```bash
+    sudo apt update
+    sudo apt upgrade
+    reboot
+    ```
 
 ## Running the tests
 
