@@ -18,7 +18,7 @@ All code is run on the following system:
 
 ### Installing
 
-1. Run raspi-config
+0. Run raspi-config
 ```bash
 sudo raspi-config
 reboot
@@ -28,7 +28,7 @@ reboot
 sudo rpi-update
 reboot
 ```
-1. Update Raspbian
+2. Update Raspbian
 ```bash
 sudo apt update
 sudo apt upgrade
