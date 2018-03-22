@@ -70,9 +70,6 @@ Please read [CONTRIBUTING.md](https://github.com/WnndGws/DS18B20_email_alert/blo
 
 ## Contributors
 
-* [AmmGws](https://github.com/ammgws)
-    - Minor python PEP suggestions
-    - Spelling and formatting
 
 ## License
 
