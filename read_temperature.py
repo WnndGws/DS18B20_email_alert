@@ -30,7 +30,9 @@ def read_temp():
     '''
     lines = read_temp_raw()
     while lines[0].strip()[-3:] != 'YES':
-        time.sleep(0.2)  # need to wait for DS18B20 to finish ADC conversion
+        # DSB1820 is set to 12-bit resolution by default, which has a max
+        # ADC conversion time of 750ms. Need to wait for it to finish.
+        time.sleep(0.8)
         lines = read_temp_raw()
     equals_pos = lines[1].find('t=')
     if equals_pos != -1:
