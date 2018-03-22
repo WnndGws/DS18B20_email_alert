@@ -11,7 +11,7 @@ from string import Template
 @click.option('--password', prompt=True, hide_input=True, confirmation_prompt=True, help="Password to log into email server")
 @click.option('--receiver-name', prompt="Name of receiver", type=str, help="Name of the email recipient")
 @click.option('--receiver-email', prompt="Email address to send email to", type=str, help="Email address of the recipient")
-def get_sender_info(sender-email, password, receiver-name, receiver-email):
+def get_sender_info(sender_email, password, receiver_name, receiver_email):
     """
     Takes command line inputs to set variables
     """
@@ -25,13 +25,13 @@ def get_sender_info(sender-email, password, receiver-name, receiver-email):
 
 @click.command()
 @click.option('--template-file', type=click.Path(), default="./email-template.txt", help="The file the email template should be read from. DEFAULT=./email-template.txt")
-def read_template(template-file):
+def read_template(template_file):
     """
     Returns a Template object comprising the contents of the
     file specified by filename.
     """
 
-    with open(template-file, 'r', encoding='UTF-8') as tf:
+    with open(template_file, 'r', encoding='UTF-8') as tf:
         template_file_content = tf.read()
     return Template(template_file_content)
 
