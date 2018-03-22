@@ -68,6 +68,12 @@ Please read [CONTRIBUTING.md](https://github.com/WnndGws/DS18B20_email_alert/blo
 
 * [WnndGws](https://github.com/wnndgws)
 
+## Contributors
+
+* [AmmGws](https://github.com/ammgws)
+    - Minor python PEP suggestions
+    - Spelling and formatting
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
