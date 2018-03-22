@@ -8,8 +8,9 @@ os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
 
 base_dir = '/sys/bus/w1/devices/'
-xxxx_magic_number_xxxx = '28'
-device_folder = glob.glob(base_dir + '28*')[0]
+# DSB1820 device ID e.g. 28-000003cee4ca
+device_id = '28*'
+device_folder = glob.glob(base_dir + device_id)[0]
 device_file = device_folder + '/w1_slave'
 
 def read_temp_raw():
