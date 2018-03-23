@@ -89,6 +89,9 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Original email code forked from arjunkrishnababu96
 [arjunkrishnababu96](https://gist.github.com/arjunkrishnababu96/5c96ef3306b92120696a44b92db8947f)
 
+* Original email-address verification code forked from [scottbrady91](https://github.com/scottbrady91/Python-Email-Verification-Script
+)
+
 * Inspiration for project from [Adafruit](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-11-ds18b20-temperature-sensing/overview)
 
 ## References
