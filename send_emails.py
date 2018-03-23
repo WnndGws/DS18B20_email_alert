@@ -12,43 +12,39 @@ from string import Template
 @click.option('--receiver-name', prompt="Name of receiver", type=str, help="Name of the email recipient")
 @click.option('--receiver-email', prompt="Email address to send email to", type=str, help="Email address of the recipient")
 @click.option('--template-file', type=click.Path(), default="./email-template.txt.example", help="The file the email template should be read from. DEFAULT=./email-template.txt")
-def send_email(sender_email, password, receiver_name, receiver_email, template_file):
+@click.option('--smtp-host', type=str, default="smtp.gmail.com", help="The URL for the smtp server to send emails with. DEFAULT=smtp.google.com")
+@click.option('--smtp-port', type=int, default=587, help="The port to use with the SMTP host. DEFAULT=587")
+def send_email(sender_email, password, receiver_name, receiver_email, template_file, smtp_host, smtp_port):
     """Takes click options, and sends an email
     """
 
     with open(template_file, 'r', encoding='UTF-8') as tf:
         template_file_content = tf.read() #Reads file, and uses that as template
 
-#
     ## set up the SMTP server
-    #s = smtplib.SMTP(host='your_host_address_here', port=your_port_here)
-    #s.starttls()
-    #s.login(MY_ADDRESS, PASSWORD)
-#
-    ## For each contact, send the email:
-    #for name, email in zip(names, emails):
-        #msg = MIMEMultipart()       # create a message
-#
-        ## add in the actual person name to the message template
-        #message = message_template.substitute(PERSON_NAME=name.title())
-#
-        ## Prints out the message body for our sake
-        #print(message)
-#
-        ## setup the parameters of the message
-        #msg['From']=MY_ADDRESS
-        #msg['To']=email
-        #msg['Subject']="This is TEST"
-#
-        ## add in the message body
-        #msg.attach(MIMEText(message, 'plain'))
-#
-        ## send the message via the server set up earlier.
-        #s.send_message(msg)
-        #del msg
+    s = smtplib.SMTP(host=smtp_host, port=smtp_port)
+    s.starttls()
+    s.login(sender_email, password)
+
+    ## Send the email:
+    msg = MIMEMultipart()       # create a message
+    message = template_file_content.replace("{NAME}", receiver_name.title()) # Add in the actual person name to the message template
+    print(message) # Prints out the message body for our sake
+
+    ## setup the parameters of the message
+    msg['From']=sender_email
+    msg['To']=receiver_email
+    msg['Subject']="This is TEST"
+
+    ## Add in the message body
+    msg.attach(MIMEText(message, 'plain'))
+
+    ## Send the message via the server set up earlier.
+    #s.send_message(msg)
+    del msg #cleanup
 #
     ## Terminate the SMTP session and close the connection
-    #s.quit()
+    s.quit()
 
 if __name__ == '__main__':
     send_email()
