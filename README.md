@@ -94,4 +94,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## References
 * This project uses [Twilio](https://www.twilio.com/sms/pricing/) to send it's SMS messages
 
-* ![Image from Adafruit](https://cdn-learn.adafruit.com/assets/assets/000/003/782/medium800/learn_raspberry_pi_breadboard-probe.png?1396801706)
+* Image from Adafruit
+![Image from Adafruit](https://cdn-learn.adafruit.com/assets/assets/000/003/782/medium800/learn_raspberry_pi_breadboard-probe.png?1396801706)
