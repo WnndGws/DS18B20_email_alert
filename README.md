@@ -7,7 +7,7 @@ The script will run continuously, and when a temperature threshold is reached, w
 
 * A Rpi set up, with a DS18B20 connected to the GPIO (see [References](#references))
 * An email account to send emails from (A free gmail account will suffice)
-* (OPTIONAL) An account with [Twilio](https://www.twilio.com/sms/pricing/)(see [References](#references))
+* (OPTIONAL) An account with [Twilio](https://www.twilio.com/sms/pricing/) (see [References](#references))
     - Only if you would like to send an SMS when an alert is triggered
 
 ### Prerequisites
