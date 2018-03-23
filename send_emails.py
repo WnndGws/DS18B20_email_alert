@@ -5,6 +5,9 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
 from string import Template
+import sys
+
+import verify_email_address
 
 @click.command()
 @click.option('--sender-email', prompt="Sender email used to log into the SMTP server", type=str, help="Sender's email address")
@@ -17,6 +20,10 @@ from string import Template
 def send_email(sender_email, password, receiver_name, receiver_email, template_file, smtp_host, smtp_port):
     """Takes click options, and sends an email
     """
+
+    receiver_exists = verify_email_address.verify_email(receiver_email, sender_email)
+    if receiver_exists == "Bad":
+        sys.exit("The receiver email address could not be verified. Please specify another email address and try again.")
 
     with open(template_file, 'r', encoding='UTF-8') as tf:
         template_file_content = tf.read() #Reads file, and uses that as template
