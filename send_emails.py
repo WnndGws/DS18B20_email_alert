@@ -21,9 +21,13 @@ def send_email(sender_email, password, receiver_name, receiver_email, template_f
     """Takes click options, and sends an email
     """
 
-    receiver_exists = verify_email_address.verify_email(receiver_email, sender_email)
-    if receiver_exists == "Bad":
-        sys.exit("The receiver email address could not be verified. Please specify another email address and try again.")
+    test_email_regex = verify_email_address.verify_email_regex(receiver_email)
+    if test_email_regex:
+        email_exists = verify_email_address.verify_email_exists(receiver_email, sender_email)
+
+    if not email_exists:
+        print(f"The receiver-email of {receiver_email} could not be verified. Please run the program again with a different receiver-email")
+        exit()
 
     with open(template_file, 'r', encoding='UTF-8') as tf:
         template_file_content = tf.read() #Reads file, and uses that as template
