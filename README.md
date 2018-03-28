@@ -3,6 +3,7 @@
 This is a python script that can be run on a Raspberry Pi connected to a DS18B20 temperature sensor.
 The script will run continuously, and when a temperature threshold is reached, will email a user.
 
+
 ## Getting Started
 
 * A Rpi set up, with a DS18B20 connected to the GPIO (see [References](#references))
@@ -10,7 +11,17 @@ The script will run continuously, and when a temperature threshold is reached, w
 * (OPTIONAL) An account with [Twilio](https://www.twilio.com/sms/pricing/) (see [References](#references))
     - Only if you would like to send an SMS when an alert is triggered
 
-### Prerequisites
+## Table of Contents
+1. [Prerequisites](#prerequisites)
+1. [Installing](#installing)
+    * [Setting up the RPI](#setting-up-the-raspberry-pi)
+    * [Setting up Python environment](#installing-python-environment)
+1. [Contributing](#contributing)
+1. [Authors](#authors)
+1. [Acknowledgments](#acknowledgments)
+1. [References](#references)
+
+## Prerequisites
 
 All code is run on the following system:
 * A Raspberry Pi Zero W
@@ -19,8 +30,8 @@ All code is run on the following system:
     - Again, any distro that runs on the Rpi should work, this is just what I am using
 * Python 3
 
-### Installing
-
+## Installing
+### Setting up the Raspberry Pi
 0. Run raspi-config
     ```bash
     sudo raspi-config
@@ -38,30 +49,13 @@ All code is run on the following system:
     reboot
     ```
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-<++>
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-<++>
-
-```
-Give an example
-<++>
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-<++>
-
-```
-Give an example
-<++>
-```
+### Installing Python Environment
+1. Set up virtual environment
+    ```bash
+    <++> WIP
+    ```
+1. Install requirements
+1. Run using command-line arguments
 
 ## Contributing
 
