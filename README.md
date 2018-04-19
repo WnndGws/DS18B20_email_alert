@@ -28,7 +28,7 @@ All code is run on the following system:
     - Any Rpi should be able to work, as long as it can handle Rasbian and Python 3
 * Rasbian Stretch Lite
     - Again, any distro that runs on the Rpi should work, this is just what I am using
-* Python 3.6.5+
+* Python 3
 
 ## Installing
 ### Setting up the Raspberry Pi
@@ -50,20 +50,10 @@ All code is run on the following system:
     ```
 
 ### Installing Python Environment
-1. Installing Python 3.6.5
-    ```bash
-    $ wget https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tgz
-    $ tar xzvf Python-3.6.0.tgz
-    $ cd Python-3.6.0/
-    $ ./configure
-    $ make
-    $ sudo make install
-    ```
-    
 1. Set up virtual environment
     ```bash
     $ apt install virtualenv
-    $ virtualenv --python /usr/bin/python3.6 RPI-Temp-sensor # To create virtualenv with python3.6
+    $ virtualenv --python /usr/bin/python3 RPI-Temp-sensor # To create virtualenv with python3.6
     $ cd RPI-Temp-sensor
     $ source ./bin/activate # To start working on virtualenv
     $ git clone https://github.com/wnndgws/DS18B20_email_alert.git
