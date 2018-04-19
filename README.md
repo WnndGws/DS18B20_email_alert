@@ -32,6 +32,20 @@ All code is run on the following system:
 
 ## Installing
 ### Setting up the Raspberry Pi
+0. Set up the Rpi to run headless
+    * Create a file in the boot partition with `touch ssh`
+    * Create a FULL wpa_supplicant.conf file in the /etc folder on the SD card
+    ```bash
+        ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+        update_config=1
+        country=AU
+
+        network={
+            ssid="Your network SSID"
+            psk="Your WPA/WPA2 security key"
+            key_mgmt=WPA-PSK
+        }
+    ```
 0. Run raspi-config
     ```bash
     $ raspi-config
