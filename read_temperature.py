@@ -71,7 +71,7 @@ def log_temps():
     logger.info("%s: Freezer Temp: %s" %(datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S"), read_temp()))
 
 if __name__ == '__main__':
-    log_temps()
     while True:
         print(read_temp())
+        log_temps()
         time.sleep(30)
