@@ -42,7 +42,7 @@ def send_emails():
     part = MIMEBase('application', "octet-stream") # create an attachment file
     part.set_payload(open("./logs/freezer01_temperature.log","rb").read())
     Encoders.encode_base64(part)
-    part.add_header('Content-Disposition', 'attachment; filename="%s" % os.path.basename(file))
+    part.add_header('Content-Disposition', 'attachment; filename="%s"' % os.path.basename(file))
 
     ## setup the parameters of the message
     msg['From']=sender_email
