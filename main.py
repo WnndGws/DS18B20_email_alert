@@ -5,7 +5,6 @@ import read_temperature
 import verify_email_address
 
 import configparser
-import logging
 import time
 
 def send_emails():
@@ -55,21 +54,5 @@ def send_emails():
     ## Terminate the SMTP session and close the connection
     s.quit()
 
-def log_temps():
-    '''
-    Creates a rotating log file of the current measured temperature
-    '''
-
-    logger = logging.getLogger("Rotating Log")
-    logger.setLevel(logging.INFO)
-    logger.setFormat("%(asctime)s: The temperature is %(message)s degrees Celcius")
-
-    handler = logging.handlers.TimedRotatingFileHandler("logs/freezer_temperature.log", when="midnight", interval=1, backupCount=365)
-    logger.addHandler(handler)
-
-    logger.info(read_temperature.read_temp())
-
 if __name__ == '__main__':
-    while True:
-        log_temps()
-        time.sleep(60)
+    pass
