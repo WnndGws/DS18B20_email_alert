@@ -19,7 +19,7 @@ def send_email():
     config = configparser.ConfigParser()
     config.read('email-settings.ini')
     sender_email = config['DEFAULT']['sender_email']
-    sender_password = config['DEFAULT']['sender_password']
+    password = config['DEFAULT']['sender_password']
     smtp_host = config['DEFAULT']['sender_smtp_host']
     smtp_port = config['DEFAULT']['sender_smtp_port']
     receiver_name = config['DEFAULT']['receiver_name']
