@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 ##
+import logging
 import os
 import glob
 import time
@@ -53,7 +54,22 @@ def read_temp():
     temp_c = parse_temp(raw_output)
     return temp_c
 
+def log_temps():
+    '''
+    Creates a rotating log file of the current measured temperature
+    '''
+
+    logger = logging.getLogger("Rotating Log")
+    logger.setLevel(logging.INFO)
+    logger.setFormat("%(asctime)s: The temperature is %(message)s degrees Celcius")
+
+    handler = logging.handlers.TimedRotatingFileHandler("logs/freezer_temperature.log", when="midnight", interval=1, backupCount=365)
+    logger.addHandler(handler)
+
+    logger.info(read_temp())
+
 if __name__ == '__main__':
     while True:
         print(read_temp())
-        time.sleep(1)
+        log_temps()
+        time.sleep(30)
