@@ -54,7 +54,7 @@ def send_emails():
     ## Terminate the SMTP session and close the connection
     s.quit()
 
-def latest_2_temps()
+def latest_2_temps():
 '''Keeps the last 2 temperatures, to prevent false positive emails. Will only send email when both are above a threshold
 '''
     latest_2_temps = []
