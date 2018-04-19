@@ -23,10 +23,11 @@ def parse_temp(raw_output):
     '''Parses temperature from raw output text.
     '''
     equals_pos = raw_output[1].find('t=') # Since raw output is a list, 1st item signals success, 2nd item contains data
-    if equals_pos != -1:
-        temp_string = raw_output[1][equals_pos+2:]
-        temp_c = float(temp_string) / 1000.0
-        return temp_c
+
+if equals_pos != -1:
+    temp_string = raw_output[1][equals_pos+2:-1] # Need to strip the trailing '\n'
+    temp_c = float(temp_string) / 1000.0
+return temp_c
 
 def read_temp():
     '''Loops until a successful response is obtained, then parses the raw output and returns the temperature.
