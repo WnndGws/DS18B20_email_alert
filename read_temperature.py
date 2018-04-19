@@ -67,7 +67,7 @@ def log_temps():
     handler = logging.handlers.TimedRotatingFileHandler("logs/freezer_temperature.log", when="midnight", interval=1, backupCount=365)
     logger.addHandler(handler)
 
-    logger.info("%s: Freezer Temp: %s" %(datetime.datetime.now().strftime("%Y%m%d-%H:%M:%s"), read_temp())
+    logger.info("%s: Freezer Temp: %s" %(datetime.datetime.now().strftime("%Y%m%d-%H:%M:%s"), read_temp()))
 
 if __name__ == '__main__':
     while True:
