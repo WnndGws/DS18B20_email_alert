@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 ## Brings everything together
 
-import read_temperature
+import log_temperature
 import verify_email_address
 
 import configparser
