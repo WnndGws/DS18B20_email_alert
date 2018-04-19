@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 ## Brings everything together
 
-# Read temp log file
-# If value over limit, send email
+from . import read_temperature
+from . import send_emails
+from . import verify_email_address
+
+import datetime
+
+
