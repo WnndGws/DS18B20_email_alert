@@ -16,6 +16,7 @@ def send_emails():
     smtp_port = config['DEFAULT']['sender_smtp_port']
     receiver_name = config['DEFAULT']['receiver_name']
     receiver_email = config['DEFAULT']['receiver_email']
+    template_file = 'email-template.ini'
 
     test_email_regex = verify_email_address.verify_email_regex(receiver_email)
 
@@ -37,7 +38,11 @@ def send_emails():
     ## Send the email:
     msg = MIMEMultipart()       # create a message
     message = template_file_content.replace("{NAME}", receiver_name.title()) # Add in the actual person name to the message template
-    print(message) # Prints out the message body for our sake
+    #print(message) # Prints out the message body for our sake
+    part = MIMEBase('application', "octet-stream") # create an attachment file
+    part.set_payload(open("./logs/freezer01_temperature.log","rb").read())
+    Encoders.encode_base64(part)
+    part.add_header('Content-Disposition', 'attachment; filename="%s" % os.path.basename(file))
 
     ## setup the parameters of the message
     msg['From']=sender_email
@@ -46,11 +51,12 @@ def send_emails():
 
     ## Add in the message body
     msg.attach(MIMEText(message, 'plain'))
+    msg.attach(part) # Attach log file
 
     ## Send the message via the server set up earlier.
     #s.send_message(msg)
     del msg #cleanup
-#
+
     ## Terminate the SMTP session and close the connection
     s.quit()
 
@@ -68,6 +74,9 @@ def keep_latest_2_temps():
 if __name__ == '__main__':
     latest_2_temps = []
     while True:
+        log_temperature.log_temps()
         keep_latest_2_temps()
-        print(latest_2_temps)
-        time.sleep(10)
+        if (latest_2_temps[0] and latest_2_temps[1]) > 20:
+            send_emails()
+            time.sleep(43200) # sleep 12 hours to prevent a million emails being sent
+        time.sleep(900)
