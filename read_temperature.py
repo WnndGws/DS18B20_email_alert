@@ -27,6 +27,7 @@ def parse_temp(raw_output):
     if equals_pos != -1:
         temp_string = raw_output[1][equals_pos+2:-1] # Need to strip the trailing '\n'
         temp_c = float(temp_string) / 1000.0
+
     return temp_c
 
 def read_temp():
@@ -49,7 +50,7 @@ def read_temp():
         time.sleep(0.8)
         raw_output = read_temp_raw()
 
-    temp_c = parse_temp(raw_output[1])
+    temp_c = parse_temp(raw_output)
     return temp_c
 
 if __name__ == '__main__':
