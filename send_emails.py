@@ -14,7 +14,7 @@ import verify_email_address
 @click.option('--password', prompt=True, hide_input=True, confirmation_prompt=True, help="Password to log into email server")
 @click.option('--receiver-name', prompt="Name of receiver", type=str, help="Name of the email recipient")
 @click.option('--receiver-email', prompt="Email address to send email to", type=str, help="Email address of the recipient")
-@click.option('--template-file', type=click.Path(), default="./email-template.txt.example", help="The file the email template should be read from. DEFAULT=./email-template.txt")
+@click.option('--template-file', type=click.Path(), default="./email-template.ini", help="The file the email template should be read from. DEFAULT=./email-template.ini")
 @click.option('--smtp-host', type=str, default="smtp.gmail.com", help="The URL for the smtp server to send emails with. DEFAULT=smtp.google.com")
 @click.option('--smtp-port', type=int, default=587, help="The port to use with the SMTP host. DEFAULT=587")
 def send_email(sender_email, password, receiver_name, receiver_email, template_file, smtp_host, smtp_port):
@@ -40,15 +40,20 @@ def send_email(sender_email, password, receiver_name, receiver_email, template_f
     ## Send the email:
     msg = MIMEMultipart()       # create a message
     message = template_file_content.replace("{NAME}", receiver_name.title()) # Add in the actual person name to the message template
-    print(message) # Prints out the message body for our sake
+    #print(message) # Prints out the message body for our sake
+    part = MIMEBase('application', "octet-stream") # create an attachment file
+    part.set_payload(open("./logs/freezer01_temperature.log","rb").read())
+    Encoders.encode_base64(part)
+    part.add_header('Content-Disposition', 'attachment; filename="%s" % os.path.basename(file))
 
     ## setup the parameters of the message
     msg['From']=sender_email
     msg['To']=receiver_email
-    msg['Subject']="This is TEST"
+    msg['Subject']="FREEZER 01 TEMPERATURE ALERT"
 
     ## Add in the message body
     msg.attach(MIMEText(message, 'plain'))
+    msg.attach(part) # Attach log file
 
     ## Send the message via the server set up earlier.
     #s.send_message(msg)
