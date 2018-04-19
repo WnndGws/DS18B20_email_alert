@@ -59,9 +59,9 @@ def keep_latest_2_temps():
     '''
     if len(latest_2_temps) == 2:
         latest_2_temps.pop(0)
-        latest_2_temps.append(read_temperature.read_temp())
+        latest_2_temps.append(log_temperature.read_temp())
     else:
-        latest_2_temps.append(read_temperature.read_temp())
+        latest_2_temps.append(log_temperature.read_temp())
 
     return(latest_2_temps)
 
