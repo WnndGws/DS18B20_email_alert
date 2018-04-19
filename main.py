@@ -5,6 +5,11 @@ import log_temperature
 import verify_email_address
 
 import configparser
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import smtplib
+from string import Template
+import sys
 import time
 
 def send_emails():
@@ -54,7 +59,7 @@ def send_emails():
     msg.attach(part) # Attach log file
 
     ## Send the message via the server set up earlier.
-    #s.send_message(msg)
+    s.send_message(msg)
     del msg #cleanup
 
     ## Terminate the SMTP session and close the connection
@@ -72,7 +77,7 @@ def keep_latest_2_temps():
     return(latest_2_temps)
 
 if __name__ == '__main__':
-    latest_2_temps = []
+    latest_2_temps = [-100, -100]
     while True:
         log_temperature.log_temps()
         keep_latest_2_temps()
