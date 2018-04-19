@@ -56,10 +56,20 @@ def send_emails():
     s.quit()
 
 def log_temps():
-    logging.basicConfig(filename='temp_log.ini',format='%(asctime)s: %(message)s', level=logging.INFO)
-    logging.info(read_temperature.read_temp())
+    '''
+    Creates a rotating log file of the current measured temperature
+    '''
+
+    logger = logging.getLogger("Rotating Log")
+    logger.setLevel(logging.INFO)
+    logger.setFormat("%(asctime)s: The temperature is %(message)s degrees Celcius")
+
+    handler = logging.handlers.TimedRotatingFileHandler("logs/freezer_temperature.log", when="midnight", interval=1, backupCount=365)
+    logger.addHandler(handler)
+
+    logger.info(read_temperature.read_temp())
 
 if __name__ == '__main__':
     while True:
         log_temps()
-        time.sleep(1)
+        time.sleep(60)
