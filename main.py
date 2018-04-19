@@ -70,4 +70,4 @@ def latest_2_temps():
 if __name__ == '__main__':
     while True:
         print(latest_2_temps())
-        sleep(10)
+        time.sleep(10)
