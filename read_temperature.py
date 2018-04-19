@@ -62,11 +62,18 @@ def log_temps():
     Creates a rotating log file of the current measured temperature
     '''
 
-    logger = logging.getLogger("Rotating Log")
-    logger.setLevel(logging.INFO)
+    log_name = "freezer_rotating_log"
+    loggers = {} # Create dictionary so new logger isnt spawned every time
 
-    handler = logging.handlers.TimedRotatingFileHandler("logs/freezer_temperature.log", when="midnight", interval=1, backupCount=365)
-    logger.addHandler(handler)
+    if loggers.get('log_name'):
+        pass
+    else:
+        logger = logging.getLogger(log_name)
+        logger.setLevel(logging.INFO)
+
+        handler = logging.handlers.TimedRotatingFileHandler("logs/freezer_temperature.log", when="midnight", interval=1, backupCount=365)
+        logger.addHandler(handler)
+        loggers.update(dict(log_name=logger))
 
     logger.info("%s: Freezer Temp: %s" %(datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S"), read_temp()))
 
