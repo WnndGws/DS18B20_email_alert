@@ -57,8 +57,6 @@ def send_emails():
 def latest_2_temps():
     '''Keeps the last 2 temperatures, to prevent false positive emails. Will only send email when both are above a threshold
     '''
-
-    latest_2_temps = []
     if len(latest_2_temps) == 2:
         latest_2_temps.pop(0)
         latest_2_temps.append(read_temperature.read_temp())
@@ -68,6 +66,7 @@ def latest_2_temps():
     return(latest_2_temps)
 
 if __name__ == '__main__':
+    latest_2_temps = []
     while True:
         print(latest_2_temps())
         time.sleep(10)
