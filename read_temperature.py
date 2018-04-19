@@ -61,13 +61,16 @@ def log_temps():
     '''
     Creates a rotating log file of the current measured temperature
     '''
+
+    log_name = "freezer_temp_log"
+
     logger = logging.getLogger(log_name)
     logger.setLevel(logging.INFO)
 
     if (logger.hasHandlers()):
         pass
     else:
-        handler = logging.handlers.TimedRotatingFileHandler("logs/freezer_temperature.log", when="midnight", interval=1, backupCount=365)
+        handler = logging.handlers.TimedRotatingFileHandler("logs/freezer01_temperature.log", when="midnight", interval=1, backupCount=365)
         logger.addHandler(handler)
 
     logger.info("%s: Freezer Temp: %s" %(datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S"), read_temp()))
