@@ -26,7 +26,7 @@ def send_email(sender_email, password, receiver_name, receiver_email, template_f
         email_exists = verify_email_address.verify_email_exists(receiver_email, sender_email)
 
     if not email_exists:
-        print(f"The receiver-email of {receiver_email} could not be verified. Please run the program again with a different receiver-email")
+        print("The receiver-email could not be verified. Please run the program again with a different receiver-email")
         exit()
 
     with open(template_file, 'r', encoding='UTF-8') as tf:
