@@ -68,4 +68,6 @@ def latest_2_temps():
     return(latest_2_temps)
 
 if __name__ == '__main__':
-    print(latest_2_temps())
+    while True:
+        print(latest_2_temps())
+        sleep(10)
