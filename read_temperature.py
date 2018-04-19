@@ -57,13 +57,13 @@ def read_temp():
     temp_c = parse_temp(raw_output)
     return temp_c
 
+loggers = {} # Create dictionary so new logger isnt spawned every time
 def log_temps():
     '''
     Creates a rotating log file of the current measured temperature
     '''
-
+    global loggers
     log_name = "freezer_rotating_log"
-    loggers = {} # Create dictionary so new logger isnt spawned every time
 
     if loggers.get('log_name'):
         pass
