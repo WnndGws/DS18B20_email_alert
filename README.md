@@ -34,27 +34,35 @@ All code is run on the following system:
 ### Setting up the Raspberry Pi
 0. Run raspi-config
     ```bash
-    sudo raspi-config
+    $ raspi-config
     reboot
     ```
 1. Update the Rpi
     ```bash
-    sudo rpi-update
+    $ rpi-update
     reboot
     ```
 2. Update Rasbian
     ```bash
-    sudo apt update
-    sudo apt upgrade
+    $ apt update
+    $ apt upgrade
     reboot
     ```
 
 ### Installing Python Environment
 1. Set up virtual environment
     ```bash
-    <++> WIP
+    $ apt install virtualenv
+    $ virtualenv --python /usr/bin/python3 RPI-Temp-sensor # To create virtualenv with python3
+    $ cd RPI-Temp-sensor
+    $ source ./bin/activate # To start working on virtualenv
+    $ git clone https://github.com/wnndgws/DS18B20_email_alert.git
+    $ cd DS18B20_email_alert
     ```
 1. Install requirements
+    ```bash
+    $ pip install -r requirements.txt
+    ```
 1. Run using command-line arguments
 
 ## Contributing
