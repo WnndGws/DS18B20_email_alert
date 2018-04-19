@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 ##
+
+import datetime
 import logging
 import os
 import glob
@@ -61,12 +63,11 @@ def log_temps():
 
     logger = logging.getLogger("Rotating Log")
     logger.setLevel(logging.INFO)
-    logger.setFormat("%(asctime)s: The temperature is %(message)s degrees Celcius")
 
     handler = logging.handlers.TimedRotatingFileHandler("logs/freezer_temperature.log", when="midnight", interval=1, backupCount=365)
     logger.addHandler(handler)
 
-    logger.info(read_temp())
+    logger.info("%s: Freezer Temp: %s" %(datetime.datetime.now().strftime("%Y%m%d-%H:%M:%s"), read_temp())
 
 if __name__ == '__main__':
     while True:

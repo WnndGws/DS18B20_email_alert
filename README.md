@@ -66,7 +66,8 @@ All code is run on the following system:
 ### Installing Python Environment
 1. Set up virtual environment
     ```bash
-    $ apt install virtualenv
+    $ apt install python3-pip
+    $ pip3 install virtualenv
     $ virtualenv --python /usr/bin/python3 RPI-Temp-sensor # To create virtualenv with python3.6
     $ cd RPI-Temp-sensor
     $ source ./bin/activate # To start working on virtualenv
