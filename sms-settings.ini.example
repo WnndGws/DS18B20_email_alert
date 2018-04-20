@@ -1,5 +1,5 @@
 [DEFAULT]
-account_sid = "from twilio dashboard"
-auth_token = "from twilio dashboard"
-receiver_ph_number = "number to send to"
-sender_ph_number = "from twilio dashboard"
+account_sid = <from twilio dashboard>
+auth_token = <from twilio dashboard>
+receiver_ph_number = <number to send to>
+sender_ph_number = <from twilio dashboard>
