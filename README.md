@@ -79,7 +79,15 @@ All code is run on the following system:
     $ pip install -r requirements.txt
     ```
 1. Run using command-line arguments
-    `<WIP>`
+    ```bash
+    $ cp ./email-settings.ini.example ./email-settings.ini
+    $ cp ./email-template.ini.example ./email-template.ini
+    ```
+    * Edit the two ini files to match your needs
+    
+    ```bash
+    python main.py
+    ```
 
 ## Contributing
 
