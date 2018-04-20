@@ -15,11 +15,13 @@ def send_sms():
     account_sid = config['DEFAULT']['account_sid']
     auth_token = config['DEFAULT']['auth_token']
     receiver_ph_number = config['DEFAULT']['receiver_ph_number']
+    sender_ph_number = config['DEFAULT']['sender_ph_number']
 
     client = Client(account_sid, auth_token)
 
     client.api.account.messages.create(
         to = receiver_ph_number,
+        from_ = sender_ph_number,
         body = sms_body
         )
 
