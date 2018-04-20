@@ -27,7 +27,7 @@ if __name__ == '__main__':
             send_emails_with_ini.send_email()
             seconds_slept = 0
             while seconds_slept < 43200: # keep logging but dont email
-                time.sleep(900)
-                seconds_slept += 900
+                time.sleep(2700)
+                seconds_slept += 2700
                 log_temperature.log_temps()
-        time.sleep(900)
+        time.sleep(2700)
