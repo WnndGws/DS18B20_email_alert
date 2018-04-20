@@ -5,6 +5,8 @@ import log_temperature
 import verify_email_address
 import send_emails_with_ini
 
+import time
+
 def keep_latest_2_temps():
     '''Keeps the last 2 temperatures, to prevent false positive emails. Will only send email when both are above a threshold
     '''
