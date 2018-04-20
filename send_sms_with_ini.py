@@ -2,7 +2,7 @@
 ## Send SMS with twilio
 
 import configparser
-import twilio
+from twilio.rest import Client
 import log_temperature
 
 def send_sms():
@@ -16,7 +16,7 @@ def send_sms():
     auth_token = config['DEFAULT']['auth_token']
     receiver_ph_number = config['DEFAULT']['receiver_ph_number']
 
-    client = twilio.rest.Client(account_sid, auth_token)
+    client = Client(account_sid, auth_token)
 
     client.api.account.messages.create(
         to = receiver_ph_number,
