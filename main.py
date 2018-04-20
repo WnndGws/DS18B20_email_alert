@@ -25,5 +25,9 @@ if __name__ == '__main__':
         keep_latest_2_temps()
         if (latest_2_temps[0] and latest_2_temps[1]) > 20:
             send_emails_with_ini.send_email()
-            time.sleep(43200) # sleep 12 hours to prevent a million emails being sent
+            seconds_slept = 0
+            while seconds_slept < 43200: # keep logging but dont email
+                time.sleep(900)
+                seconds_slept += 900
+                log_temperature.log_temps()
         time.sleep(900)
