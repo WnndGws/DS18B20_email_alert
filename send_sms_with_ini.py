@@ -19,7 +19,7 @@ def send_sms():
     client = twilio.rest.Client(account_sid, auth_token)
 
     client.api.account.messages.create(
-        to = receiver_ph_number
+        to = receiver_ph_number,
         body = sms_body
         )
 
