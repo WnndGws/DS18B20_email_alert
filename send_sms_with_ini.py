@@ -5,7 +5,7 @@ import configparser
 import twilio
 import log_temperature
 
-def send_sms()
+def send_sms():
 
     temp = log_temperature.read_temp()
     sms_body = "Your freezer has been logged at %s degC. Please see your email for more information" % temp
@@ -22,3 +22,6 @@ def send_sms()
         to = receiver_ph_number
         body = sms_body
         )
+
+if __name__ == '__main__':
+    send_sms()
