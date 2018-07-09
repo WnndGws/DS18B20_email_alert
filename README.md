@@ -97,10 +97,16 @@ All code is run on the following system:
     $ source ../bin/activate # To make sure virtualenv is still active
     $ pip install -r requirements.txt
     ```
+1. Set up a webserver running with Apache
+    ```bash
+    $ apt install apache2 libapache2-mod-wsgi
+    $ a2enmod wsgi #To ensure we have enabled wsgi
+    ```
 1. Run the flask server
     ```bash
-    python logs-flask.py
+    python __init__.py
     ```
+1. On another computer go to '<rpi-local-ip>:8000' to test server
 
 ## Contributing
 
