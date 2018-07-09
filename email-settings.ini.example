@@ -1,9 +1,0 @@
-[DEFAULT]
-sender_email = blah@blah.com
-sender_password = plaintext
-sender_smtp_host = smtp.blah.com
-sender_smtp_port = 587
-
-receiver_name = John Smith
-receiver_email = John@blah.com
-
