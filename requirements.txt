@@ -1,5 +1,0 @@
-# Requirements for whole suite of DS18B20_email_alert
-
-click>=6.7
-dnspython
-twilio
