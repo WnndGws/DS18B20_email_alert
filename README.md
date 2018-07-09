@@ -87,7 +87,7 @@ All code is run on the following system:
     * Edit the two ini files to match your needs
 1. Run the main program
     ```bash
-    python main.py
+    $ python main.py
     ```
 
 ### Installing Flask Environment
@@ -101,6 +101,16 @@ All code is run on the following system:
     ```bash
     $ apt install apache2 libapache2-mod-wsgi
     $ a2enmod wsgi #To ensure we have enabled wsgi
+    ```
+
+1. Set up the Flask configuration file
+    * Edit flask_app.conf to reflect the urls etc.
+ 
+1. Set up a webserver running with Apache
+    ```bash
+    $ ln ./flask_app.conf /etc/apache2/sites-available/flask_app.conf
+    $ a2ensite flask_app #same name as the .conf file
+    $ systemctl restart apache2.service
     ```
 1. Run the flask server
     ```bash
