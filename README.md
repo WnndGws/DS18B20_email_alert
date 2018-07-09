@@ -15,7 +15,8 @@ The script will run continuously, and when a temperature threshold is reached, w
 1. [Prerequisites](#prerequisites)
 1. [Installing](#installing)
     * [Setting up the RPI](#setting-up-the-raspberry-pi)
-    * [Setting up Python environment](#installing-python-environment)
+    * [Setting up logging environment](#installing-logging-environment)
+    * [Setting up flask ui](#installing-flask-environment)
 1. [Contributing](#contributing)
 1. [Authors](#authors)
 1. [Acknowledgments](#acknowledgments)
@@ -63,7 +64,7 @@ All code is run on the following system:
     reboot
     ```
 
-### Installing Python Environment
+### Installing Logging Environment
 1. Set up virtual environment
     ```bash
     $ apt install python3-pip
@@ -72,7 +73,7 @@ All code is run on the following system:
     $ cd RPI-Temp-sensor
     $ source ./bin/activate # To start working on virtualenv
     $ git clone https://github.com/wnndgws/DS18B20_email_alert.git
-    $ cd DS18B20_email_alert
+    $ cd DS18B20_email_alert/Logging
     ```
 1. Install requirements
     ```bash
@@ -84,9 +85,21 @@ All code is run on the following system:
     $ cp ./email-template.ini.example ./email-template.ini
     ```
     * Edit the two ini files to match your needs
-    
+1. Run the main program
     ```bash
     python main.py
+    ```
+
+### Installing Flask Environment
+1. Set up Flask environment
+    ```bash
+    $ cd $HOME/RPI-Temp-sensor/DS18B20_email_alert/Flask_UI
+    $ source ../bin/activate # To make sure virtualenv is still active
+    $ pip install -r requirements.txt
+    ```
+1. Run the flask server
+    ```bash
+    python logs-flask.py
     ```
 
 ## Contributing
