@@ -70,7 +70,7 @@ def log_temps():
     if (logger.hasHandlers()):
         pass
     else:
-        handler = logging.handlers.TimedRotatingFileHandler("logs/freezer01_temperature.log", when="midnight", interval=1, backupCount=365)
+        handler = logging.handlers.TimedRotatingFileHandler("~/RPI-Temp-sensor/DS18B20_email_alert/logs/freezer01_temperature.log", when="midnight", interval=1, backupCount=365)
         logger.addHandler(handler)
 
     logger.info("%s: Freezer Temp: %s" %(datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S"), read_temp()))
