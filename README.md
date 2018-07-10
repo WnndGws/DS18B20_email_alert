@@ -108,8 +108,10 @@ All code is run on the following system:
  
 1. Set up a webserver running with Apache
     ```bash
-    $ ln ./flask_app.conf /etc/apache2/sites-available/flask_app.conf
-    $ a2ensite flask_app #same name as the .conf file
+    $ ln ./etcapache2sitesavailable/Flask_UI/Flask_UI.conf /etc/apache2/sites-available/Flask_UI/Flask_UI.conf
+    $ ln ./varwww/Flask_UI/Flask_UI.wsgi /var/www/Flask_UI/Flask_UI.wsgi
+    $ ln ./varwww/Flask_UI/__init__.py /var/www/Flask_UI/__init__.py
+    $ a2ensite flask_ui #same name as the .conf file
     $ systemctl restart apache2.service
     ```
 1. Run the flask server
