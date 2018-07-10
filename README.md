@@ -64,7 +64,7 @@ All code is run on the following system:
     reboot
     ```
 
-### Installing Logging Environment
+### Installing logging Environment
 1. Set up virtual environment
     ```bash
     $ apt install python3-pip
@@ -73,7 +73,7 @@ All code is run on the following system:
     $ cd RPI-Temp-sensor
     $ source ./bin/activate # To start working on virtualenv
     $ git clone https://github.com/wnndgws/DS18B20_email_alert.git
-    $ cd DS18B20_email_alert/Logging
+    $ cd DS18B20_email_alert/logging
     ```
 1. Install requirements
     ```bash
@@ -93,27 +93,24 @@ All code is run on the following system:
 ### Installing Flask Environment
 1. Set up Flask environment
     ```bash
-    $ cd $HOME/RPI-Temp-sensor/DS18B20_email_alert/Flask_UI
+    $ cd $HOME/RPI-Temp-sensor/DS18B20_email_alert/webapp
     $ source ../bin/activate # To make sure virtualenv is still active
     $ pip install -r requirements.txt
     ```
 1. Set up a webserver running with Apache
     ```bash
-    $ apt install apache2 libapache2-mod-wsgi
-    $ a2enmod wsgi #To ensure we have enabled wsgi
+    $ apt install supervisor
     ```
 
 1. Set up the Flask configuration file
-    * Edit flask_app.conf to reflect the urls etc.
- 
-1. Set up a webserver running with Apache
+    * Edit supervisor.conf to reflect the paths etc.
+        * They should be correct though
+
+1. Symlink the supervisor conf file to the correct location
     ```bash
-    $ ln ./etcapache2sitesavailable/Flask_UI/Flask_UI.conf /etc/apache2/sites-available/Flask_UI/Flask_UI.conf
-    $ ln ./varwww/Flask_UI/Flask_UI.wsgi /var/www/Flask_UI/Flask_UI.wsgi
-    $ ln ./varwww/Flask_UI/__init__.py /var/www/Flask_UI/__init__.py
-    $ a2ensite flask_ui #same name as the .conf file
-    $ systemctl restart apache2.service
+    $ ln supervisor.conf /etc/supervisor/conf.d/supervisor.conf
     ```
+ 
 1. Run the flask server
     ```bash
     python __init__.py
