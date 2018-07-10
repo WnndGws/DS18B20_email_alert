@@ -109,6 +109,9 @@ All code is run on the following system:
 1. Symlink the supervisor conf file to the correct location
     ```bash
     $ ln supervisor.conf /etc/supervisor/conf.d/supervisor.conf
+    $ systemctl restart supervisor.service
+    $ supervisorctl reload #if fails make sure using sudo
+    $ supervisorctl start flask_dashboard
     ```
  
 1. Run the flask server
