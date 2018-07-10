@@ -11,7 +11,7 @@ home_dir = os.path.expanduser("~")
 # Run the following code whenever someone goes to the URL in app route (in this case it is /)
 @app.route("/")
 def todays_logs():
-    with open('/home/pi/RPI-Temp-sensor/DS18B20_email_alert/Logging/logs/freezer01_temperature.log', 'r') as f:
+    with open('/home/pi/RPI-Temp-sensor/DS18B20_email_alert/logging/logs/freezer01_temperature.log', 'r') as f:
         todays_temperatures = f.read()
         return (todays_temperatures)
 
