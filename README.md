@@ -114,11 +114,13 @@ All code is run on the following system:
     $ supervisorctl start flask_dashboard
     ```
  
-1. Run the flask server
-    ```bash
-    python __init__.py
-    ```
 1. On another computer go to '<rpi-local-ip>:8000' to test server
+
+1. (OPTIONAL) We have a locally running flask server. Might want to create a more stable wsgi server
+    ```bash
+    $ apt install apache2 libapache2-mod-wsgi #we will use an apache server
+    $ usermod -a -G "www-data" pi #to make user pi aware of the www-data group
+    ```
 
 ## Contributing
 
