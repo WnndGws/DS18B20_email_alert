@@ -65,6 +65,14 @@ All code is run on the following system:
     reboot
     ```
 
+3. (OPTIONAL) Install avahi-daemon to allow ssh by hostname
+    ```bash
+    $ apt install avahi-daemon
+    $ systemctl start avahi-daemon.service
+    $ systemctl enable avahi-daemon.service
+    reboot
+    ```
+
 ### Installing logging Environment
 1. Set up virtual environment
     ```bash
