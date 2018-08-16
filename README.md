@@ -124,16 +124,16 @@ All code is run on the following system:
     ```
 
 ## TODO
-[x] Set up RPI with its own python environment
-[x] Log temperatures to rotating log files
-[x] Confirm sending notification email works
-[] Confirm sending notification SMS works
-[] Set up a webserver on the RPI
-[] Display RPI data in a nice dashboard for the user
-[] Allow user interaction with dashboard (eg. view past logs)
-[] Allow user setup of new device
-[] Add user authentication and verification
-[] Add database to webserver
+- [x] Set up RPI with its own python environment
+- [x] Log temperatures to rotating log files
+- [x] Confirm sending notification email works
+- [ ] Confirm sending notification SMS works
+- [ ] Set up a webserver on the RPI
+- [ ] Display RPI data in a nice dashboard for the user
+- [ ] Allow user interaction with dashboard (eg. view past logs)
+- [ ] Allow user setup of new device
+- [ ] Add user authentication and verification
+- [ ] Add database to webserver
 
 ## Contributing
 
