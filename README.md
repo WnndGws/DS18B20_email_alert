@@ -171,3 +171,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 * Image from Adafruit
 ![Image from Adafruit](https://cdn-learn.adafruit.com/assets/assets/000/003/782/medium800/learn_raspberry_pi_breadboard-probe.png?1396801706)
+* [DS18B20 Datasheet](http://ee-classes.usc.edu/ee459/library/datasheets/DS18B20.pdf)
