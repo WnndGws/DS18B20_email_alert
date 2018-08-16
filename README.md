@@ -100,36 +100,6 @@ All code is run on the following system:
     ```
 
 ### Installing Flask Environment
-1. Set up Flask environment
-    ```bash
-    $ cd $HOME/RPI-Temp-sensor/DS18B20_email_alert/webapp
-    $ source ../bin/activate # To make sure virtualenv is still active
-    $ pip install -r requirements.txt
-    ```
-1. Set up a webserver running with Apache
-    ```bash
-    $ apt install supervisor
-    ```
-
-1. Set up the Flask configuration file
-    * Edit supervisor.conf to reflect the paths etc.
-        * They should be correct though
-
-1. Symlink the supervisor conf file to the correct location
-    ```bash
-    $ ln supervisor.conf /etc/supervisor/conf.d/supervisor.conf
-    $ systemctl restart supervisor.service
-    $ supervisorctl reload #if fails make sure using sudo
-    $ supervisorctl start flask_dashboard
-    ```
- 
-1. On another computer go to '<rpi-local-ip>:8000' to test server
-
-1. (OPTIONAL) We have a locally running flask server. Might want to create a more stable wsgi server
-    ```bash
-    $ apt install apache2 libapache2-mod-wsgi #we will use an apache server
-    $ usermod -a -G "www-data" pi #to make user pi aware of the www-data group
-    ```
 
 ## TODO
 - [x] Set up RPI with its own python environment
