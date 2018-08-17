@@ -101,6 +101,8 @@ All code is run on the following system:
 
 ### Installing Flask Environment
 
+WIP
+
 ## TODO
 - [x] Set up RPI with its own python environment
 - [x] Log temperatures to rotating log files
