@@ -17,6 +17,7 @@ The script will run continuously, and when a temperature threshold is reached, w
     * [Setting up the RPI](#setting-up-the-raspberry-pi)
     * [Setting up logging environment](#installing-logging-environment)
     * [Setting up flask ui](#installing-flask-environment)
+    * [Setting up GUI](#setting-up-gui)
 1. [TODO](#todo)
 1. [Contributing](#contributing)
 1. [Authors](#authors)
@@ -188,12 +189,28 @@ All code is run on the following system:
     $ systemctl restart apache2.service
     ```
 
+### Setting up GUI
+
+0. Copy the files from `webapp/static` to `/var/www/FlaskApp/TempLog/static`
+1. Copy the files from `webapp/templates` to `/var/www/FlaskApp/TempLog/templates`
+2. Edit `__init__.py`
+    ```python
+    from flask import Flask, render_template
+    .
+    .
+    .
+    def homepage():
+        return render_template("main.html")
+    ```
+3. Restart apache2 with `systemctl restart apache2.service`
+
+
 ## TODO
 - [x] Set up RPI with its own python environment
 - [x] Log temperatures to rotating log files
 - [x] Confirm sending notification email works
 - [ ] Confirm sending notification SMS works
-- [ ] Set up a webserver on the RPI
+- [x] Set up a webserver on the RPI
 - [ ] Display RPI data in a nice dashboard for the user
 - [ ] Allow user interaction with dashboard (eg. view past logs)
 - [ ] Allow user setup of new device
