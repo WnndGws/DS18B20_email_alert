@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--Modified from https://github.com/BlackrockDigital/startbootstrap-sb-admin-2-->
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Freezer_01 Dashboard</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="{{ url_for('static', filename='css/metisMenu.min.css')}}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='css/sb-admin-2.css')}}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{{ url_for('static', filename='css/font-awesome.min.css')}}" type="text/css">
+
+    <!-- Shortcut Icon -->
+    <link href="{{ url_for('static', filename='favicon.svg')}}" rel="shortcut icon">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+    <div id="wrapper">
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Flot</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+               <!-- /.col-lg-12 -->
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Multiple Axes Line Chart Example
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-line-chart-multi"></div>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- jQuery -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="{{ url_for('static', filename='js/metisMenu.min.js')}}"></script>
+
+    <!-- Flot Charts JavaScript -->
+    <script src="{{ url_for('static', filename='js/excanvas.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.flot.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.flot.resize.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.flot.time.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.flot.tooltip.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='data/flot-data.js')}}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{{ url_for('static', filename='data/sb-admin-2.js')}}"></script>
+    
+</body>
+</html>
