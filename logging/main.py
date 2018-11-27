@@ -18,7 +18,7 @@ def keep_latest_2_temps():
     else:
         latest_2_temps.append(log_temperature.read_temp())
 
-    return(latest_2_temps)
+    return latest_2_temps
 
 
 if __name__ == '__main__':
