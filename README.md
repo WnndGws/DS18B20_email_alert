@@ -104,20 +104,6 @@ All code is run on the following system:
 
 ### Setting up GUI
 
-0. Copy the files from `webapp/static` to `/var/www/FlaskApp/TempLog/static`
-1. Copy the files from `webapp/templates` to `/var/www/FlaskApp/TempLog/templates`
-2. Edit `__init__.py`
-    ```python
-    from flask import Flask, render_template
-    .
-    .
-    .
-    def homepage():
-        return render_template("main.html")
-    ```
-3. Restart apache2 with `systemctl restart apache2.service`
-
-
 ## TODO
 - [x] Set up RPI with its own python environment
 - [x] Log temperatures to rotating log files
